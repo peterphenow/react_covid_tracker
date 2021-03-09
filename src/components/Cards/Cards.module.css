@@ -8,14 +8,29 @@
 
 .infected {
   border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+  border-right: 5px solid rgba(0, 0, 255, 0.5);
+
+  border-radius: 28px !important;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 20px 20px 40px #878787, -20px -20px 40px #ffffff !important;
 }
 
 .recovered {
   border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+  border-right: 5px solid rgba(0, 255, 0, 0.5);
+
+  border-radius: 28px !important;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 20px 20px 40px #878787, -20px -20px 40px #ffffff !important;
 }
 
 .deaths {
   border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+  border-right: 5px solid rgba(255, 0, 0, 0.5);
+
+  border-radius: 28px !important;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 20px 20px 40px #878787, -20px -20px 40px #ffffff !important;
 }
 
 @media (max-width: 770px) {

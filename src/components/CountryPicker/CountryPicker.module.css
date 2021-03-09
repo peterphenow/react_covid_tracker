@@ -1,4 +1,8 @@
 .formControl {
   width: 30%;
   margin-bottom: 30px !important;
+
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: inset 6px 6px 6px #ababab, inset -6px -6px 6px #ffffff;
 }
