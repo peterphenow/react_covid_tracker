@@ -2,13 +2,19 @@ import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
 
-export const fetchData = async () => {
+export const fetchData = async (country) => {
+  let changeableUrl = url;
+
+  if (country) {
+    changeableUrl = `${url}/countries/${country}`;
+  }
+
   try {
     //destructure the data from res. Can just use data instead of res.data
     // then further destructure everything inside data
     const {
       data: { confirmed, recovered, deaths, lastUpdate }
-    } = await axios.get(url);
+    } = await axios.get(changeableUrl);
 
     // before all the destructuring, these would be res.data.confirmed, etc.
     // const modifiedData = {
@@ -36,7 +42,9 @@ export const fetchData = async () => {
       deaths,
       lastUpdate
     };
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export const fetchDailyData = async () => {
@@ -50,4 +58,16 @@ export const fetchDailyData = async () => {
     }));
     return modifiedData;
   } catch (err) {}
+};
+
+export const fetchCountries = async () => {
+  try {
+    const {
+      data: { countries }
+    } = await axios.get(`${url}/countries`);
+
+    return countries.map((country) => country.name);
+  } catch (err) {
+    console.log(err);
+  }
 };
