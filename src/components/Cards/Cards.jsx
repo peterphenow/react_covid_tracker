@@ -31,7 +31,9 @@ const Cards = (props) => {
             <Typography color='textSecondary' gutterBottom>
               Recovered
             </Typography>
-            <CountUp start={0} end={props.data.recovered.value} duration={1.5} separator=',' />
+            <Typography variant='h5'>
+              <CountUp start={0} end={props.data.recovered.value} duration={1.5} separator=',' />
+            </Typography>
             <Typography color='textSecondary'>{new Date(props.data.lastUpdate).toDateString()}</Typography>
             <Typography variant='body2'>Number of recoveries from COVID-19</Typography>
           </CardContent>
@@ -41,7 +43,9 @@ const Cards = (props) => {
             <Typography color='textSecondary' gutterBottom>
               Deaths
             </Typography>
-            <CountUp start={0} end={props.data.deaths.value} duration={1.5} separator=',' />
+            <Typography variant='h5'>
+              <CountUp start={0} end={props.data.deaths.value} duration={1.5} separator=',' />
+            </Typography>
             <Typography color='textSecondary'>{new Date(props.data.lastUpdate).toDateString()}</Typography>
             <Typography variant='body2'>Number of deaths caused by COVID-19</Typography>
           </CardContent>
